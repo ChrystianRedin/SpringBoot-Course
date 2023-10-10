@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+</head>
+<body>
+    <h1>Usuario</h1>
+    <p>
+        <label for="">Nombre:</label>
+        <input th:attr="value=${usuario.nombre}" />
+    </p>
+    <p>
+        <label for="">Apellidos:</label>
+        <input th:attr="value=${usuario.apellido}" />
+    </p>
+
+    <p>
+        <label for="">Email:</label>
+        <input th:if="${usuario.email}" th:attr="value=${usuario.email}" />
+        <input th:if="${usuario.email == null }" th:attr="value='Usuario sin email' " />
+    </p>
+</body>
+</html>
